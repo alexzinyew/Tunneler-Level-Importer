@@ -27,7 +27,9 @@ else
 	loadCustomLevelScriptedEvents = game.ReplicatedStorage:FindFirstChild("loadCustomLevelScriptedEvents")
 end
 
-for _,Translation in pairs(Map.Events.Translations:GetChildren()) do
+local Events = Map:WaitForChild("Events")
+
+for _,Translation in pairs(Events.Translations:GetChildren()) do
 	local Pack = require(game.ReplicatedStorage.Translations[Translation.Name])
 	local Translations = loadstring(Translation.Source)()
 	for i,v in pairs(Translations) do
@@ -40,8 +42,8 @@ Map.SpawnLocation.Name = Map.Name
 Map[Map.Name].Parent = game.ReplicatedStorage.SpawnLocations
 
 loadCustomLevelScriptedEvents.Event:Connect(function(...)
-	if Map.Events then
-		loadstring(Map.Events.Source)()(...)
+	if Events then
+		loadstring(Events.Source)()(...)
 	end
 end)
 
