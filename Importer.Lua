@@ -53,7 +53,7 @@ for _,Function in pairs(getgc()) do
 			local OldFunc
 			OldFunc = hookfunction(Function, function(MapName,Static)
 				if MapName == Map.Name and Map:FindFirstChild("Events") then
-					loadCustomLevelScriptedEvents:Fire(workspace.Level.Static,workspace.Props,workspace.LevelIgnoreRaycast, Map.Events, workspace.LevelTriggers)
+					loadCustomLevelScriptedEvents:Fire(workspace.Level.Static,workspace.Props,workspace.LevelIgnoreRaycast, Events, workspace.LevelTriggers)
 				else
 					for i,v in pairs(_G.Connections) do
 						v:Disconnect()
