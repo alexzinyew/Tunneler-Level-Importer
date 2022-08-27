@@ -40,7 +40,9 @@ Map.SpawnLocation.Name = Map.Name
 Map[Map.Name].Parent = game.ReplicatedStorage.SpawnLocations
 
 loadCustomLevelScriptedEvents.Event:Connect(function(...)
-	loadstring(Map.Events.Source)()(...)
+	if Map.Events then
+		loadstring(Map.Events.Source)()(...)
+	end
 end)
 
 for _,Function in pairs(getgc()) do
