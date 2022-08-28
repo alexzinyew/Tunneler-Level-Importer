@@ -1,7 +1,7 @@
 if _G.Connections == nil then
 	_G.Connections = {}
 end
-local Map = game:GetObjects("rbxassetid://".._G.map)[1]
+local Map = game:GetObjects(getsynasset(_G.map))[1]
 local loadCustomLevelScriptedEvents
 
 if Map:IsA("Folder") then
