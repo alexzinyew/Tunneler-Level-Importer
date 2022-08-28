@@ -1,7 +1,8 @@
 if _G.Connections == nil then
 	_G.Connections = {}
 end
-local Map = game:GetObjects(getsynasset(_G.map))[1]
+local assetType = type(_G.map)
+local Map = game:GetObjects(assetType == "number" and _G.map or _G.userIsKRNL and getcustomasset(_G.map) or getsynasset(_G.map))[1]
 local loadCustomLevelScriptedEvents
 
 if Map:IsA("Folder") then
