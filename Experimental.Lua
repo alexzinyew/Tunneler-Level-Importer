@@ -62,7 +62,7 @@ return function(MapId,isKrnl)
 	else
 		Map = game:GetObjects(MapId)
 	end 
-	
+	print(Map)
 	if Map then
 		Map.Name = string.lower(Map.Name)
 		
