@@ -63,7 +63,7 @@ return function(MapId,isKrnl)
 		Map = game:GetObjects(MapId)
 	end 
 	
-	if Map:FindFirstChild("is_tunneler_level") then
+	if Map then
 		Map.Name = string.lower(Map.Name)
 		
 		if table.find(_G.importedMaps,Map.Name) then
