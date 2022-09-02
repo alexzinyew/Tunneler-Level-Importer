@@ -12,8 +12,6 @@ end
 
 Map.Parent = game.ReplicatedStorage.Levels
 
-local Events = Map:WaitForChild("Events")
-
 for _,Translation in pairs(Events.Translations:GetChildren()) do
 	local Pack = require(game.ReplicatedStorage.Translations[Translation.Name])
 	local Translations = loadstring(Translation.Source)()
