@@ -39,11 +39,6 @@ for _,Translation in pairs(Events.Translations:GetChildren()) do
 end
 
 Map.Parent = game.ReplicatedStorage.Levels
-Map.SpawnLocation.Name = Map.Name
-if game.ReplicatedStorage.SpawnLocations:FindFirstChild(Map.Name) then
-	game.ReplicatedStorage.SpawnLocations:FindFirstChild(Map.Name):Destroy()
-end
-Map[Map.Name].Parent = game.ReplicatedStorage.SpawnLocations
 
 loadCustomLevelScriptedEvents.Event:Connect(function(...)
 	if Events then
