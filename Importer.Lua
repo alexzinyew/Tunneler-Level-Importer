@@ -10,6 +10,8 @@ if game.ReplicatedStorage.Levels:FindFirstChild(Map.Name) then
 	game.ReplicatedStorage.Levels[Map.Name]:Destroy()
 end
 
+Map.Parent = game.ReplicatedStorage.Levels
+
 local Events = Map:WaitForChild("Events")
 
 for _,Translation in pairs(Events.Translations:GetChildren()) do
