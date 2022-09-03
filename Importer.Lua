@@ -12,7 +12,7 @@ end
 
 Map.Parent = game.ReplicatedStorage.Levels
 
-for _,Translation in pairs(Events.Translations:GetChildren()) do
+for _,Translation in pairs(Map.Translations:GetChildren()) do
 	local Pack = require(game.ReplicatedStorage.Translations[Translation.Name])
 	local Translations = loadstring(Translation.Source)()
 	for i,v in pairs(Translations) do
